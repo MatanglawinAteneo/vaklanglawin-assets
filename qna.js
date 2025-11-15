@@ -341,7 +341,8 @@ const scenes = [
     speaker: "Host Lawin", 
     text: "Confident! Alright! We shall proceed then. Kindly get the remaining envelope for your question.", 
     bg: "https://raw.githubusercontent.com/MatanglawinAteneo/vaklanglawin-assets/main/stage.jpg",
-    triggerEnvelope: true 
+    triggerEnvelope: true, 
+    noShimmer: true  // This scene will have NO shimmer
   },
   {
     speaker: "Host Lawin",
