@@ -88,6 +88,16 @@ class AssetPreloader {
       await new Promise(resolve => setTimeout(resolve, minLoadTime - elapsedTime));
     }
 
+    // Show the "gora na!" button and update loading text
+    this.loadingText.textContent = 'Loading tapos na!';
+    const goraBtn = document.getElementById('goraBtn');
+    goraBtn.style.display = 'block';
+
+    // Wait for the button to be clicked
+    await new Promise(resolve => {
+      goraBtn.addEventListener('click', resolve, { once: true });
+    });
+
     // Hide characters and page-container BEFORE any transitions
     const pageContainer = document.querySelector('.page-container');
     const characterContainer = document.querySelector('.character-container');
@@ -321,7 +331,7 @@ const scenes = [
   },
   { 
     speaker: "Kween", 
-    text: "Thank you! You too! You look dashing tonight! Your head, it's so big!", 
+    text: "Thank you! You too! You look dashing tonight! Bet ko yung feathers!", 
     bg: "https://raw.githubusercontent.com/MatanglawinAteneo/vaklanglawin-assets/main/stage.jpg",
     noShimmer: true  // This scene will have NO shimmer
   },
